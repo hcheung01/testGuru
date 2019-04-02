@@ -33,6 +33,7 @@ app.use(function (err, req, res, next) {
   }
 });
 
+// Get body from post request
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
@@ -40,7 +41,6 @@ app.use(bodyParser.urlencoded({
 
 app.all('/', function (req, res, next) {
   console.log('Accessing the / section');
-  throw new Error('BROKEN');
   next();
 });
 
